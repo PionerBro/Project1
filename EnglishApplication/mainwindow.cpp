@@ -8,7 +8,8 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    this->setStyleSheet("QMenuBar {background-color: #250a1b; color: #e7f7fa}"
+    this->setStyleSheet("QMenuBar {border: 1px solid #000000; background-color: #022021; color: #e7f7fa}"
+                        "QMenuBar::item:selected {background: #252525}"
                         "QMenu {selection-background-color: #250a1b; background-color: #252525; color: #e7f7fa}");
 
     QMenuBar* bar = this->menuBar();

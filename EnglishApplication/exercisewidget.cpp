@@ -13,7 +13,7 @@ ExerciseWidget::ExerciseWidget(DataBase* db, QWidget *parent) : QWidget(parent),
 {
     this->setStyleSheet("QPushButton {background-color: #34051b}"
                         "QLabel {color: #ffbf1b}"
-                        "QLineEdit {color: #ffbf1b}");
+                        "QLineEdit {border: 1px solid #000000; color: #ffbf1b}");
 
     QVBoxLayout* vbx = new QVBoxLayout(this);
     QHBoxLayout* hbx1 = new QHBoxLayout;
@@ -76,6 +76,9 @@ ExerciseWidget::ExerciseWidget(DataBase* db, QWidget *parent) : QWidget(parent),
 }
 
 void ExerciseWidget::slotStart(){
+    if(!m_db->getPageCount()){
+        return;
+    }
     QVector<int> vec;
     answerlist.clear();
     m_db->selectPageTable(vec);

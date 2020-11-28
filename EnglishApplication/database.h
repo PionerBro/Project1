@@ -35,6 +35,7 @@ public:
     int getCurrentPage();
     int getMaxPage();
     int getRecCount();
+    int getPageCount();
     int getLastNumOfRecord(int n = 0);
     int getFirstNumOfRecord(int n = 0);
     void deleteFromPageTables(int num);

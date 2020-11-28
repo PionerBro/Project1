@@ -15,7 +15,6 @@
 #include <QMenu>
 #include <QDebug>
 
-
 AddWordsWidget::AddWordsWidget(DataBase* db, QWidget *parent) : QWidget(parent), m_db(db)
 {
     //db_recCount = m_db->getRecCount();
@@ -64,12 +63,17 @@ void AddWordsWidget::setupModel(const QString& tableName, const QStringList& hea
     model->setTable(tableName);
     for(int i=0; i<model->columnCount(); ++i){
         model->setHeaderData(i, Qt::Horizontal, headers[i]);
-    }
+    }    
     model->setSort(0, Qt::AscendingOrder);
 }
 
 void AddWordsWidget::addView(){
+
+
     view->setModel(model);
+
+    view->setStyleSheet("QHeaderView::section {background-color: #022021; color: #c0ae00}"
+                        "QTableCornerButton::section {background-color: #022021}");
     view->setColumnHidden(0, true);
     view->setSelectionBehavior(QAbstractItemView::SelectRows);
     view->setSelectionMode(QAbstractItemView::SingleSelection);

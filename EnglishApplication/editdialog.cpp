@@ -13,6 +13,8 @@ EditDialog::EditDialog(const QSqlRecord &rec, QWidget* parent, Qt::WindowFlags f
 {
     this->setModal(true);
     this->setAttribute(Qt::WA_DeleteOnClose);
+    this->setMinimumSize(178,90);
+    this->setStyleSheet("QLineEdit {border: 1px solid #000000}");
     QVBoxLayout* addvbx = new QVBoxLayout(this);
     QLabel* englbl = new QLabel(trUtf8("Английский"),this);
     QLabel* ruslbl = new QLabel(trUtf8("Русский"),this);
@@ -27,7 +29,7 @@ EditDialog::EditDialog(const QSqlRecord &rec, QWidget* parent, Qt::WindowFlags f
     QHBoxLayout* addEdithbx = new QHBoxLayout;
     addEdithbx->addWidget(englne);
     addEdithbx->addWidget(ruslne);
-    btnOk = new QPushButton(trUtf8("Добавить"),this);
+    btnOk = new QPushButton(trUtf8("Применить"),this);
     btnOk->setDisabled(true);
     QPushButton* btnCancel = new QPushButton(trUtf8("Отмена"), this);
     QHBoxLayout* addButtonhbx = new QHBoxLayout;

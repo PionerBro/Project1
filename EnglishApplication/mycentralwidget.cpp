@@ -62,7 +62,7 @@ MyCentralWidget::MyCentralWidget(QList<QMenu*>& list, QWidget *parent) : QWidget
     wgtExc->hide();
     connect(btnPractice, SIGNAL(clicked()), this, SLOT(btnPracticeToggled()));
 
-    QPushButton* btnAdd = new QPushButton(trUtf8("Словарь"),btn_wgt);
+    QPushButton* btnAdd = new QPushButton(trUtf8("Словарь"), btn_wgt);
     btnAdd->setFixedWidth(100);
     btnAdd->setMaximumHeight(70);
     btnAdd->setFlat(true);
@@ -77,7 +77,7 @@ MyCentralWidget::MyCentralWidget(QList<QMenu*>& list, QWidget *parent) : QWidget
 
     connect(btnAdd, SIGNAL(clicked()),this,SLOT(btnAddToggled()));
 
-    QLabel* lbl = new QLabel;
+    QLabel* lbl = new QLabel(this);
     QVBoxLayout* but_vbx = new QVBoxLayout(btn_wgt);
     but_vbx->setContentsMargins(0,0,0,0);
     but_vbx->setSpacing(0);
@@ -88,7 +88,7 @@ MyCentralWidget::MyCentralWidget(QList<QMenu*>& list, QWidget *parent) : QWidget
 
     mainWgt = new QWidget(this);
 
-    QLabel* mainlbl = new QLabel(trUtf8("Описание приложения"));
+    QLabel* mainlbl = new QLabel(mainWgt);
     QHBoxLayout* mainhbx = new QHBoxLayout(mainWgt);
     mainhbx->addWidget(mainlbl);
 

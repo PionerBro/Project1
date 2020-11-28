@@ -281,3 +281,14 @@ const QString DataBase::selectOneRecord(int num, QStringList& lst){
         return query.value(0).toString();
     }
 }
+
+int DataBase::getPageCount(){
+    QSqlQuery query;
+    if(!query.exec("SELECT count(*) FROM " PAGE_TABLE)){
+        QMessageBox::information(0,"EnglishPage", trUtf8("Ошибка выборки данных из базы"));
+        exit(1);
+    }else{
+        query.next();
+        return query.value(0).toInt();
+    }
+}
